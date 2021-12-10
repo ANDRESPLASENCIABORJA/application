@@ -31,25 +31,28 @@ const typeDefs = gql`
   }
 
   type Query {
-    passenger: Passenger
-    ride: [Ride]
-    form: Form
+    passengers: [Passenger]!
+    passenger(passengerId: ID!): Passenger
+    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
+    me: Passenger
+    rides: (passengerId: ID!): Passenger
+    forms: (passengerId: ID!): Passenger
   }
 
   type Mutation {
-    addUser(
+    addPassenger(
       firstName: String!
       lastName: String!
       email: String!
       password: String!
     ): Auth
 
-    updateUser(
+    updatePassenger(
       firstName: String
       lastName: String
       email: String
       password: String
-    ): User
+    ): Passenger
 
     login(email: String!, password: String!): Auth
 
@@ -57,10 +60,9 @@ const typeDefs = gql`
       _id: ID
       companyName: String
       taxPayerNumber: Number
-      rides: [String]!
+      rides: [Ride]!
     ): Passenger
   }
 `;
 
 module.exports = typeDefs;
-
