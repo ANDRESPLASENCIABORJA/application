@@ -30,6 +30,7 @@ const typeDefs = gql`
     passenger: Passenger
   }
 
+  # Deal with the querys of the application
   type Query {
     passengers: [Passenger]
     me: Passenger
