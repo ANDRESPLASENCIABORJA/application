@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 // Import the query that we are going to use, in this case is QUERY_USER
 import { useQuery } from "@apollo/client";
-import { QUERY_USER } from "../utils/queries";
+import { QUERY_PASSENGER } from "../utils/queries";
 
 // Import Bootstrapp dependencies
 import { Card, Row, Col, Button, ListGroup, Table } from "react-bootstrap";
@@ -17,7 +17,7 @@ import World from "../images/worlds.jpg";
 
 const Profile = () => {
   // Store the query on a constant
-  const { data } = useQuery(QUERY_USER);
+  const { data } = useQuery(QUERY_PASSENGER);
   // Store the user itself on a variable
   let user;
 

@@ -4,34 +4,23 @@ import React, { useState, useEffect } from "react";
 
 // Then import the bs components
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
-import ListGroup from "react-bootstrap/ListGroup";
 import { MDBCol, MDBIcon } from "mdbreact";
-
-// Import the assets from components
-import AssetList from "../components/AssetList";
-import Cart from "../components/Cart";
-
-// Import images
-import Mountain from "../images/mountain.jpg";
 
 // Import useQuery and use mutation frmo apollo server
 import { useQuery } from "@apollo/client";
 
 
 // Import the stock values to add them to the cards
-import { QUERY_ASSETS } from "../utils/queries";
+import { QUERY_RIDES } from "../utils/queries";
 
 // Add a constant destructuring the stocks information that we want to use
 
 // Import authentication
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 
 const Home = () => {
   // Add code to query data, i wat to query in this case the stocks info of the user so is going to be query me
-  const { loading, data } = useQuery(QUERY_ASSETS);
+  const { loading, data } = useQuery(QUERY_RIDES);
 
   const assets = data?.assets || [];
 

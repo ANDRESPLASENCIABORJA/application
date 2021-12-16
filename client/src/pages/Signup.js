@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../utils/mutations";
+import { ADD_PASSENGER } from "../utils/mutations";
 
 import Sign from "../images/signup.jpg";
 
 const SignupForm = () => {
   // Set initial form state
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser] = useMutation(ADD_PASSENGER);
 
   // Handle the submmission of the form
   const handleFormSubmit = async (event) => {

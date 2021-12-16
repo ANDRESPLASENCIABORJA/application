@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 // Import our mutation
 import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
+import { LOGIN_PASSENGER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -12,7 +12,7 @@ const LoginForm = (props) => {
   
   // SET THE INITIAL FORM STATE AND DEFINE THE MUTATION
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_PASSENGER);
 
   // Handle the event of the form submission
   const handleFormSubmit = async (event) => {
