@@ -33,7 +33,7 @@ const passengerSchema = new Schema({
     ref: "Ride",
   }],
 
-  form: [{
+  forms: [{
     type: Schema.Types.ObjectId,
     ref: "Form",
   }],

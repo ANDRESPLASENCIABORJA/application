@@ -7,7 +7,7 @@ const typeDefs = gql`
     email: String
     password: String
     rides: [Ride]
-    form: [Form]
+    forms: [Form]
   }
 
   type Form {
@@ -42,6 +42,14 @@ const typeDefs = gql`
     me: Passenger
     ride(_id: ID!): Ride
     form(_id: ID!): Form
+  }
+
+  # Deal with the Mutations of the application
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addPassenger(name: String!, email: String!, password: String!): Auth
+    updatePassenger(name: String, email: String, password: String): Passenger
+    addForm(companyName: String, taxPayerNumber: Int, rides: String): Form
   }
 `;
 
