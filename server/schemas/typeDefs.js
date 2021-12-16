@@ -25,6 +25,10 @@ const typeDefs = gql`
     billAmmount: Int
   }
 
+  type Checkout {
+    session: ID
+  }
+
   type Auth {
     token: ID!
     passenger: Passenger
@@ -33,9 +37,11 @@ const typeDefs = gql`
   # Deal with the querys of the application
   type Query {
     passengers: [Passenger]
-    me: Passenger
     rides: [Ride]
     forms: [Form]
+    me: Passenger
+    ride(_id: ID!): Ride
+    form(_id: ID!): Form
   }
 `;
 

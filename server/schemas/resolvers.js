@@ -13,7 +13,17 @@ const resolvers = {
       return await Passenger.find({});
     },
 
-    // By adding context to our query, we can retrieve the logged in user without specifically searching for them
+    // Let's query all the rides
+    rides: async () => {
+      return await Ride.find({});
+    },
+
+    // Let's query all the passenger profiles
+    forms: async () => {
+      return await Form.find({});
+    },
+
+    // Query the passenger profile
     me: async (parent, args, context) => {
       if (context.user) {
         return Profile.findOne({ _id: context.user._id });
@@ -21,17 +31,16 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    // Let's query all the forms
-    rides: async () => {
-      return Ride.find({});
+    // Query one ride
+    ride: async (parent, { _id }) => {
+      return await Ride.findById(_id);
     },
 
-    forms: async () => {
-      return Form.find();
+    // Query one form
+    form: async (parent, { _id }) => {
+      return await Form.findById(_id);
     },
   },
-
 };
 
 module.exports = resolvers;
-
