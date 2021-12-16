@@ -3,6 +3,9 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
+const formSchema = require("./Form");
+const rideSchema = require("./Ride");
+
 const passengerSchema = new Schema({
   // To authenticate a passenger has a name
   name: {
@@ -24,24 +27,16 @@ const passengerSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  // End of authentication model
 
-  // Form to submit and list of rides to select which ones submit
-  // here extends rides model
-  rides: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Ride",
-    },
-  ],
+  rides: [{
+    type: Schema.Types.ObjectId,
+    ref: "Ride",
+  }],
 
-  form: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Form",
-    },
-  ],
-
+  form: [{
+    type: Schema.Types.ObjectId,
+    ref: "Form",
+  }],
 });
 
 // set up pre-save middleware to create password
