@@ -3,9 +3,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const formSchema = require("./Form");
-const rideSchema = require("./Ride");
-
 const passengerSchema = new Schema({
   // To authenticate a passenger has a name
   username: {

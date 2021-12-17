@@ -10,7 +10,7 @@ import { ADD_PASSENGER } from "../utils/mutations";
 const SignupForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
@@ -19,7 +19,7 @@ const SignupForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  const [addUser, { error }] = useMutation(ADD_PASSENGER);
+  const [addPassenger, { error }] = useMutation(ADD_PASSENGER);
 
   useEffect(() => {
     if (error) {
@@ -45,11 +45,11 @@ const SignupForm = () => {
     }
 
     try {
-      const { data } = await addUser({
+      const { data } = await addPassenger({
         variables: { ...userFormData },
       });
       console.log(data);
-      Auth.login(data.addUser.token);
+      Auth.login(data.addPassenger.token);
     } catch (err) {
       console.error(err);
     }

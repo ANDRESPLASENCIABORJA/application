@@ -30,9 +30,8 @@ const Home = () => {
           {/* <Card.Img src={Mountain} alt="Card image" /> */}
           <Card.ImgOverlay className="card-first">
             <Card.Title>
-              Investing is the first step to achieve financial freedom
+              Application
             </Card.Title>
-            <Card.Text>Take a look at our Stocks</Card.Text>
           </Card.ImgOverlay>
         </Card>
       </section>
