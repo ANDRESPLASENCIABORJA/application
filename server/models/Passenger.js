@@ -8,7 +8,7 @@ const rideSchema = require("./Ride");
 
 const passengerSchema = new Schema({
   // To authenticate a passenger has a name
-  name: {
+  username: {
     type: String,
     required: true,
     unique: true,

@@ -69,9 +69,9 @@ const resolvers = {
       return { token, user };
     },
 
-    addPassenger: async (parent, { name, email, password }) => {
+    addPassenger: async (parent, { username, email, password }) => {
       // First we create the user
-      const user = await Passenger.create({ name, email, password });
+      const user = await Passenger.create({ username, email, password });
       // To reduce friction for the user, we immediately sign a JSON Web Token and log the user in after they are created
       const token = signToken(user);
       // Return an `Auth` object that consists of the signed token and user's information
