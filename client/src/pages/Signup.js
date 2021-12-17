@@ -5,7 +5,7 @@ import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { ADD_PASSENGER } from "../utils/mutations";
 
-import Sign from "../images/signup.jpg";
+// import Sign from "../images/signup.jpg";
 
 const SignupForm = () => {
   // Set initial form state

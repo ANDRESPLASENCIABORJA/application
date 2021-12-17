@@ -13,7 +13,7 @@ import { Card, Row, Col, Button, ListGroup, Table } from "react-bootstrap";
 import { MDBIcon } from "mdbreact";
 
 // Import background image
-import World from "../images/worlds.jpg";
+// import World from "../images/worlds.jpg";
 
 const Profile = () => {
   // Store the query on a constant
@@ -29,7 +29,7 @@ const Profile = () => {
 
   return (
     <main>
-      <section
+      {/* <section
         className="card-first-profile container-fluid"
         style={{
           backgroundImage: `url(${World})`,
@@ -49,7 +49,7 @@ const Profile = () => {
             </tr>
           </thead>
         </Table>
-      </section>
+      </section> */}
 
       {/* Ternary operator that will tell us of the user has data then show it */}
 

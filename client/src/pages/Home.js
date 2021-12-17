@@ -22,13 +22,13 @@ const Home = () => {
   // Add code to query data, i wat to query in this case the stocks info of the user so is going to be query me
   const { loading, data } = useQuery(QUERY_RIDES);
 
-  const assets = data?.assets || [];
+  // const assets = data?.assets || [];
 
   return (
     <main>
       <section className="home-main-section">
         <Card className="bg-dark text-white" style={{ borderRadius: 0 }}>
-          <Card.Img src={Mountain} alt="Card image" />
+          {/* <Card.Img src={Mountain} alt="Card image" /> */}
           <Card.ImgOverlay className="card-first">
             <Card.Title>
               Investing is the first step to achieve financial freedom
@@ -49,7 +49,7 @@ const Home = () => {
         </Card>
       </section>
 
-      <section className="widgets" style={{ backgroundColor: "black" }}>
+      {/* <section className="widgets" style={{ backgroundColor: "black" }}>
       {loading ? (
             <div>Loading...</div>
           ) : (
@@ -58,7 +58,7 @@ const Home = () => {
               title="Here's the current roster of friends..."
             />
           )}
-      </section>
+      </section> */}
     </main>
   );
 };

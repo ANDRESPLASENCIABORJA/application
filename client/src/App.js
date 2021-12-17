@@ -11,9 +11,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Import css stylesheet
 import "./App.css";
 
-import { Provider } from "react-redux";
-import store from "./utils/store";
-
 // Import components
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -54,34 +51,24 @@ function App() {
           <div className="application-header">
             <Header />
             <div className="main-sections">
-              <Provider store={store}>
-                <Switch>
-                  {/* Define routes to render different page components at different paths */}
-                  <Route exact path="/">
-                    <Home />
-                  </Route>
-                  {/* Define a route that will take in variable data */}
-                  <Route exact path="/profile">
-                    <Profile />
-                  </Route>
-                  {/* Define a route that will take in variable data */}
-                  <Route exact path="/login">
-                    <Login />
-                  </Route>
-                  {/* Define a route that will take in variable data */}
-                  <Route exact path="/signup">
-                    <Signup />
-                  </Route>
-                  {/* Define a route that will take in variable data */}
-                  <Route exact path="/charts">
-                    <Charts />
-                  </Route>
-                  {/* Define a route for the products detail */}
-                  <Route exact path="/assets/:id" component={Detail} />
-                  {/* Define the no match route in case there is no match */}
-                  <Route component={NoMatch} />
-                </Switch>
-              </Provider>
+              <Switch>
+                {/* Define routes to render different page components at different paths */}
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                {/* Define a route that will take in variable data */}
+                <Route exact path="/profile">
+                  <Profile />
+                </Route>
+                {/* Define a route that will take in variable data */}
+                <Route exact path="/login">
+                  <Login />
+                </Route>
+                {/* Define a route that will take in variable data */}
+                <Route exact path="/signup">
+                  <Signup />
+                </Route>
+              </Switch>
             </div>
             <Footer />
           </div>
